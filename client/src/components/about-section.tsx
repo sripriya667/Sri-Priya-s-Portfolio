@@ -7,21 +7,21 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    { name: "Data Visualization", color: "primary" },
-    { name: "UI/UX Design", color: "secondary" },
-    { name: "React & TypeScript", color: "accent" },
-    { name: "API Integration", color: "primary" },
-    { name: "Project Management", color: "secondary" },
-    { name: "Client Communication", color: "accent" }
+    { name: "Frontend Development", color: "primary" },
+    { name: "Backend Architecture", color: "secondary" },
+    { name: "Database Design", color: "accent" },
+    { name: "API Development", color: "primary" },
+    { name: "Performance Optimization", color: "secondary" },
+    { name: "User Experience", color: "accent" }
   ];
 
   const technologies = [
-    { name: "React", color: "primary" },
-    { name: "D3.js", color: "secondary" },
+    { name: "JavaScript", color: "primary" },
+    { name: "React", color: "secondary" },
     { name: "Node.js", color: "accent" },
-    { name: "Python", color: "primary" },
-    { name: "Figma", color: "secondary" },
-    { name: "MongoDB", color: "accent" }
+    { name: "MongoDB", color: "primary" },
+    { name: "TypeScript", color: "secondary" },
+    { name: "Express.js", color: "accent" }
   ];
 
   return (
@@ -61,11 +61,16 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Full-Stack Developer & Designer</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Full-Stack Web Developer</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                I'm Priya, a passionate full-stack web developer who thrives on building digital experiences that are clean, impactful, and purpose-driven.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                With a strong foundation in JavaScript, React, Node.js, and MongoDB, I enjoy crafting end-to-end solutions that combine design, logic, and usability.
+                Whether I'm building a landing page or architecting an API, I care deeply about performance, user experience, and writing code that scales.
+              </p>
               <p className="text-gray-600 leading-relaxed">
-                With over 5 years of experience in web development and design, I create intuitive, 
-                beautiful applications that solve real problems. I love working with creative teams 
-                and helping them bring their ideas to life through code.
+                I'm not just here to code — I'm here to create, learn, and contribute to meaningful projects.
               </p>
             </div>
 

@@ -102,9 +102,13 @@ DataFlow Creative is a modern full-stack web application built as a portfolio an
 
 ## Changelog
 
-Changelog:
-- June 24, 2025. Initial setup
+- June 24, 2025: Initial portfolio setup with React, Tailwind CSS, and Framer Motion
+- June 24, 2025: Personalized portfolio for Sri Priya - full-stack web developer
+- June 24, 2025: Updated hero section, about section, and site branding
 
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+- Preferred communication style: Simple, everyday language
+- Portfolio owner: Sri Priya (full-stack web developer)
+- Specializes in: JavaScript, React, Node.js, MongoDB
+- Focus: Clean, impactful, purpose-driven digital experiences

@@ -73,7 +73,7 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "alex.johnson.dev@gmail.com",
+      value: "sripriya.dev@gmail.com",
       color: "primary"
     },
     {

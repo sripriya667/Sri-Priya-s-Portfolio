@@ -54,7 +54,7 @@ export default function Navigation() {
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
               <ChartNetwork className="text-white text-sm" size={16} />
             </div>
-            <span className="text-xl font-bold text-gray-900">Alex Johnson</span>
+            <span className="text-xl font-bold text-gray-900">Sri Priya</span>
           </motion.div>
 
           {/* Desktop Navigation */}

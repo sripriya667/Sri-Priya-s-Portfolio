@@ -25,17 +25,14 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Hi, I'm{" "}
+              👋 Hi, I'm{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Alex Johnson
+                Sri Priya
               </span>
-              <br />
-              Creative Developer & Data Specialist
             </h1>
             <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              I create beautiful, functional web applications that help creative teams communicate effectively 
-              with their clients and technical partners. Specializing in data visualization, 
-              user experience design, and seamless integrations.
+              A full-stack web developer who transforms ideas into fast, functional, and user-friendly web apps. 
+              I craft responsive frontends, build scalable backends, and love turning complexity into clarity.
             </p>
           </motion.div>
 
