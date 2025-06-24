@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChartNetwork } from "lucide-react";
+import { Code } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
         >
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <ChartNetwork className="text-white text-sm" size={16} />
+              <Code className="text-white text-sm" size={16} />
             </div>
             <span className="text-xl font-bold">Sri Priya</span>
           </div>

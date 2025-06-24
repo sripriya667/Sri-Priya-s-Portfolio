@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChartNetwork, Menu, X } from "lucide-react";
+import { Code, Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,7 +52,7 @@ export default function Navigation() {
             onClick={() => scrollToSection("home")}
           >
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-              <ChartNetwork className="text-white text-sm" size={16} />
+              <Code className="text-white text-sm" size={16} />
             </div>
             <span className="text-xl font-bold text-gray-900">Sri Priya</span>
           </motion.div>

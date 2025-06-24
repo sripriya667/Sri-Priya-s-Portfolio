@@ -59,26 +59,7 @@ export default function HeroSection() {
             </Button>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16"
-          >
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">50+</div>
-              <div className="text-gray-600 mt-1">Creative Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-secondary">25+</div>
-              <div className="text-gray-600 mt-1">Happy Clients</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-accent">100%</div>
-              <div className="text-gray-600 mt-1">Success Rate</div>
-            </div>
-          </motion.div>
+
         </div>
       </div>
     </section>
