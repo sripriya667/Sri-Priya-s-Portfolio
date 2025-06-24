@@ -4,48 +4,26 @@ import { useRef } from "react";
 import { Github, ExternalLink, Book, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { projects } from "@/data/projects";
 
 export default function ProjectsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const projects = [
-    {
-      title: "Creative Analytics Dashboard",
-      description: "Interactive dashboard helping creative agencies track project performance, team productivity, and client satisfaction in real-time.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      technologies: ["React", "D3.js", "MongoDB"],
-      githubUrl: "#",
-      demoUrl: "#"
-    },
-    {
-      title: "Team Communication Platform",
-      description: "Unified platform for creative teams to collaborate, share feedback, and maintain project timelines with integrated client communication.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      technologies: ["Next.js", "Socket.io", "PostgreSQL"],
-      githubUrl: "#",
-      demoUrl: "#"
-    },
-    {
-      title: "Data Integration API",
-      description: "RESTful API service enabling technical teams to seamlessly integrate creative project data with existing enterprise systems.",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-      technologies: ["Node.js", "Express", "Redis"],
-      githubUrl: "#",
-      docsUrl: "#"
-    }
-  ];
-
-  const techColors = {
+  const techColors: { [key: string]: string } = {
     "React": "primary",
-    "D3.js": "secondary",
+    "Node.js": "secondary",
     "MongoDB": "accent",
-    "Next.js": "primary",
-    "Socket.io": "secondary",
+    "JavaScript": "primary",
+    "TypeScript": "secondary",
     "PostgreSQL": "accent",
-    "Node.js": "primary",
-    "Express": "secondary",
-    "Redis": "accent"
+    "Express": "primary",
+    "Socket.io": "secondary",
+    "Stripe": "accent",
+    "JWT": "primary",
+    "Chart.js": "secondary",
+    "Weather API": "accent",
+    "CSS3": "primary"
   };
 
   return (
@@ -91,8 +69,8 @@ export default function ProjectsSection() {
                       <span
                         key={tech}
                         className={`px-2 py-1 rounded text-sm font-medium ${
-                          techColors[tech as keyof typeof techColors] === 'primary' ? 'bg-primary/10 text-primary' :
-                          techColors[tech as keyof typeof techColors] === 'secondary' ? 'bg-secondary/10 text-secondary' :
+                          techColors[tech] === 'primary' ? 'bg-primary/10 text-primary' :
+                          techColors[tech] === 'secondary' ? 'bg-secondary/10 text-secondary' :
                           'bg-accent/10 text-accent'
                         }`}
                       >
@@ -102,20 +80,38 @@ export default function ProjectsSection() {
                   </div>
                   
                   <div className="flex space-x-4">
-                    <button className="flex items-center text-primary hover:text-primary/80 transition-colors">
-                      <Github className="mr-2" size={16} />
-                      GitHub
-                    </button>
-                    {project.demoUrl ? (
-                      <button className="flex items-center text-secondary hover:text-secondary/80 transition-colors">
+                    {project.githubUrl && (
+                      <a 
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-primary hover:text-primary/80 transition-colors"
+                      >
+                        <Github className="mr-2" size={16} />
+                        GitHub
+                      </a>
+                    )}
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-secondary hover:text-secondary/80 transition-colors"
+                      >
                         <ExternalLink className="mr-2" size={16} />
                         Live Demo
-                      </button>
-                    ) : (
-                      <button className="flex items-center text-secondary hover:text-secondary/80 transition-colors">
+                      </a>
+                    )}
+                    {project.docsUrl && (
+                      <a
+                        href={project.docsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center text-secondary hover:text-secondary/80 transition-colors"
+                      >
                         <Book className="mr-2" size={16} />
                         Documentation
-                      </button>
+                      </a>
                     )}
                   </div>
                 </CardContent>
