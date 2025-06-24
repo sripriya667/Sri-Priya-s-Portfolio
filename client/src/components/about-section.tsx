@@ -61,11 +61,11 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Creative Data Specialist</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Full-Stack Developer & Designer</h3>
               <p className="text-gray-600 leading-relaxed">
-                With over 8 years of experience in both creative industries and technical development, 
-                I specialize in building tools that help creative teams communicate their vision effectively 
-                to clients and technical stakeholders.
+                With over 5 years of experience in web development and design, I create intuitive, 
+                beautiful applications that solve real problems. I love working with creative teams 
+                and helping them bring their ideas to life through code.
               </p>
             </div>
 

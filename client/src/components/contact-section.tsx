@@ -73,7 +73,7 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@dataflowcreative.com",
+      value: "alex.johnson.dev@gmail.com",
       color: "primary"
     },
     {
@@ -107,8 +107,8 @@ export default function ContactSection() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Let's Work Together</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Ready to bridge the gap between your creative vision and technical implementation? 
-            Let's discuss your project.
+            Have a project in mind? I'd love to hear about it and help bring your ideas to life.
+            Let's create something amazing together.
           </p>
         </motion.div>
 

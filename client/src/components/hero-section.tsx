@@ -25,14 +25,17 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Creative Data Solutions for{" "}
+              Hi, I'm{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Modern Teams
+                Alex Johnson
               </span>
+              <br />
+              Creative Developer & Data Specialist
             </h1>
             <p className="mt-6 text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Bridging the gap between creative vision and technical implementation. 
-              I help creative teams communicate effectively with clients and technical teams through powerful data tools and intuitive interfaces.
+              I create beautiful, functional web applications that help creative teams communicate effectively 
+              with their clients and technical partners. Specializing in data visualization, 
+              user experience design, and seamless integrations.
             </p>
           </motion.div>
 

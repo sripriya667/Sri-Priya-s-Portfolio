@@ -16,14 +16,14 @@ export default function Footer() {
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
               <ChartNetwork className="text-white text-sm" size={16} />
             </div>
-            <span className="text-xl font-bold">DataFlow Creative</span>
+            <span className="text-xl font-bold">Alex Johnson</span>
           </div>
           <p className="text-gray-400 mb-6">
-            Bridging creative vision with technical excellence
+            Creative Developer & Data Specialist
           </p>
           <div className="border-t border-gray-800 pt-6">
             <p className="text-gray-500">
-              © 2024 DataFlow Creative. All rights reserved.
+              © 2024 Alex Johnson. All rights reserved.
             </p>
           </div>
         </motion.div>
