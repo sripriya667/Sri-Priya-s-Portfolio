@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Github, ExternalLink, Book, FolderOpen } from "lucide-react";
+import { Github, ExternalLink, Book } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { projects } from "@/data/projects";
@@ -20,10 +20,11 @@ export default function ProjectsSection() {
     "Express": "primary",
     "Socket.io": "secondary",
     "Stripe": "accent",
-    "JWT": "primary",
+    "HTML5": "secondary",
     "Chart.js": "secondary",
     "Weather API": "accent",
-    "CSS3": "primary"
+    "CSS3": "accent"
+    
   };
 
   return (
@@ -36,9 +37,9 @@ export default function ProjectsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          {/* <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Exciting projects currently in development - check back soon for live demos and code
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -79,7 +80,7 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                   
-                  <div className="flex space-x-4">
+                  <div className="flex flex-wrap gap-4 mt-auto">
                     {project.githubUrl && (
                       <a 
                         href={project.githubUrl}
@@ -92,15 +93,15 @@ export default function ProjectsSection() {
                       </a>
                     )}
                     {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-secondary hover:text-secondary/80 transition-colors"
+                      <Button
+                        asChild
+                        className="bg-gradient-to-r from-primary to-secondary text-white hover:from-primary/90 hover:to-secondary/90"
                       >
-                        <ExternalLink className="mr-2" size={16} />
-                        Live Demo
-                      </a>
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2" size={16} />
+                          Live Demo
+                        </a>
+                      </Button>
                     )}
                     {project.docsUrl && (
                       <a
@@ -119,19 +120,6 @@ export default function ProjectsSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* View All Projects Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            <FolderOpen className="mr-2" size={18} />
-            View All Projects
-          </Button>
-        </motion.div>
       </div>
     </section>
   );

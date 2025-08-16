@@ -7,12 +7,12 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    { name: "Frontend Development", color: "primary" },
-    { name: "Backend Architecture", color: "secondary" },
-    { name: "Database Design", color: "accent" },
-    { name: "API Development", color: "primary" },
-    { name: "Performance Optimization", color: "secondary" },
-    { name: "User Experience", color: "accent" }
+    { name: "Responsive Frontend Development", color: "primary" },
+    { name: "Scalable Backend Architecture", color: "secondary" },
+    { name: "Efficient Database Design & Management", color: "accent" },
+    { name: "RESTful API Development", color: "primary" },
+    { name: "Application Performance Optimization", color: "secondary" },
+    { name: "Intuitive User Experience (UX) Design", color: "accent" }
   ];
 
   const technologies = [
@@ -21,7 +21,11 @@ export default function AboutSection() {
     { name: "Node.js", color: "accent" },
     { name: "MongoDB", color: "primary" },
     { name: "TypeScript", color: "secondary" },
-    { name: "Express.js", color: "accent" }
+    { name: "Express.js", color: "accent" },
+    { name: "SQL", color: "primary" },
+    { name: "CSS3", color: "secondary" },
+    { name: "REST APIs", color: "accent" },
+    { name: "HTML5", color: "primary" },
   ];
 
   return (
@@ -47,7 +51,7 @@ export default function AboutSection() {
           className="flex justify-center mb-16"
         >
           <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800"
+            src="/profile.jpeg"
             alt="Professional headshot"
             className="rounded-2xl shadow-2xl w-64 h-64 object-cover"
           />

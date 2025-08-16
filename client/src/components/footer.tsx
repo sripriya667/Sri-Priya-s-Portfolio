@@ -23,7 +23,7 @@ export default function Footer() {
           </p>
           <div className="border-t border-gray-800 pt-6">
             <p className="text-gray-500">
-              © 2024 Sri Priya. All rights reserved.
+              © 2025 Sri Priya. All rights reserved.
             </p>
           </div>
         </motion.div>

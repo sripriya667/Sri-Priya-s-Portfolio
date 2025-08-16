@@ -55,8 +55,8 @@ export default function HeroSection() {
               className="border-2 border-gray-300 hover:border-primary text-gray-700 hover:text-primary px-8 py-4 rounded-xl font-semibold transition-all duration-200"
               onClick={() => window.open('/resume.pdf', '_blank')}
             >
-              <Download className="mr-2" size={18} />
-              Download Resume
+              
+              View Resume
             </Button>
           </motion.div>
 

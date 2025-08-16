@@ -1,0 +1,517 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeSync - Data Tool for Creative Teams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366F1',
+                        secondary: '#8B5CF6',
+                        accent: '#06B6D4',
+                        success: '#10B981',
+                        warning: '#F59E0B',
+                        danger: '#EF4444'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 font-inter">
+    <!-- @COMPONENT: AppLayout -->
+    <div class="min-h-screen flex">
+        <!-- @COMPONENT: Sidebar -->
+        <aside class="w-64 bg-white border-r border-slate-200 flex flex-col">
+            <!-- Logo & Brand -->
+            <div class="p-6 border-b border-slate-200">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-sm"></i>
+                    </div>
+                    <h1 class="text-xl font-bold text-slate-800">CreativeSync</h1>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg bg-primary text-white">
+                            <i class="fas fa-chart-pie w-5"></i>
+                            <span class="font-medium">Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-folder-open w-5"></i>
+                            <span class="font-medium">Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-comments w-5"></i>
+                            <span class="font-medium">Team Chat</span>
+                            <span class="ml-auto bg-danger text-white text-xs px-2 py-1 rounded-full">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-users w-5"></i>
+                            <span class="font-medium">Client Portal</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-cloud-upload-alt w-5"></i>
+                            <span class="font-medium">Data Import</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors">
+                            <i class="fas fa-code w-5"></i>
+                            <span class="font-medium">API Settings</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Team Status -->
+                <div class="mt-8 p-4 bg-slate-50 rounded-lg">
+                    <h3 class="text-sm font-semibold text-slate-700 mb-3">Team Status</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-6 h-6 bg-success rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 bg-white rounded-full"></div>
+                            </div>
+                            <span class="text-sm text-slate-600">Sarah Chen</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-6 h-6 bg-warning rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 bg-white rounded-full"></div>
+                            </div>
+                            <span class="text-sm text-slate-600">Alex Rivera</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-6 h-6 bg-slate-300 rounded-full flex items-center justify-center">
+                                <div class="w-2 h-2 bg-white rounded-full"></div>
+                            </div>
+                            <span class="text-sm text-slate-600">Mike Johnson</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- User Profile -->
+            <div class="p-4 border-t border-slate-200">
+                <div class="flex items-center space-x-3">
+                    <!-- Creative team member profile photo -->
+                    <img src="https://pixabay.com/get/g87f41d144d26febdafd42f7c23142ece15956a9398bb005397d297d8d7c42d1952175eb016bc0021dc33c37fa5f5d35624fc49f4b095ced7beab868a62557a55_1280.jpg" alt="User profile" class="w-10 h-10 rounded-full object-cover">
+                    <div class="flex-1">
+                        <p class="text-sm font-medium text-slate-800" data-bind="user.name">Jessica Wong</p>
+                        <p class="text-xs text-slate-500" data-bind="user.role">Creative Director</p>
+                    </div>
+                    <button class="text-slate-400 hover:text-slate-600">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <!-- @END_COMPONENT: Sidebar -->
+
+        <!-- @COMPONENT: MainContent -->
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <!-- @COMPONENT: TopBar -->
+            <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6">
+                <div>
+                    <h2 class="text-lg font-semibold text-slate-800">Project Dashboard</h2>
+                    <p class="text-sm text-slate-500">Monitor your creative projects and team performance</p>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="relative p-2 text-slate-400 hover:text-slate-600 transition-colors">
+                        <i class="fas fa-bell text-lg"></i>
+                        <span class="absolute -top-1 -right-1 w-3 h-3 bg-danger rounded-full"></span>
+                    </button>
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-medium">
+                        <i class="fas fa-plus mr-2"></i>New Project
+                    </button>
+                </div>
+            </header>
+            <!-- @END_COMPONENT: TopBar -->
+
+            <!-- @COMPONENT: DashboardContent -->
+            <div class="flex-1 overflow-auto p-6">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-slate-600">Active Projects</p>
+                                <p class="text-2xl font-bold text-slate-800" data-bind="stats.activeProjects">12</p>
+                            </div>
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-project-diagram text-primary text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center text-sm">
+                            <span class="text-success font-medium">+8%</span>
+                            <span class="text-slate-500 ml-1">from last month</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-slate-600">Team Members</p>
+                                <p class="text-2xl font-bold text-slate-800" data-bind="stats.teamMembers">24</p>
+                            </div>
+                            <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-users text-secondary text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center text-sm">
+                            <span class="text-success font-medium">+3</span>
+                            <span class="text-slate-500 ml-1">new this week</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-slate-600">Client Satisfaction</p>
+                                <p class="text-2xl font-bold text-slate-800" data-bind="stats.satisfaction">94%</p>
+                            </div>
+                            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-heart text-accent text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center text-sm">
+                            <span class="text-success font-medium">+2%</span>
+                            <span class="text-slate-500 ml-1">improvement</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-lg transition-shadow">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-slate-600">Revenue</p>
+                                <p class="text-2xl font-bold text-slate-800" data-bind="stats.revenue">$48.2K</p>
+                            </div>
+                            <div class="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-dollar-sign text-success text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex items-center text-sm">
+                            <span class="text-success font-medium">+12%</span>
+                            <span class="text-slate-500 ml-1">vs last month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Analytics -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <!-- Project Timeline -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-slate-800">Project Timeline</h3>
+                            <select class="text-sm border border-slate-200 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option>Last 30 days</option>
+                                <option>Last 90 days</option>
+                                <option>This year</option>
+                            </select>
+                        </div>
+                        <!-- @FUNCTIONALITY: This chart should display project timelines using Chart.js or similar library -->
+                        <div class="h-64 bg-slate-50 rounded-lg flex items-center justify-center">
+                            <div class="text-center text-slate-500">
+                                <i class="fas fa-chart-gantt text-4xl mb-2"></i>
+                                <p>Timeline visualization will render here</p>
+                                <p class="text-sm">Connect data source to display project timelines</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Metrics -->
+                    <div class="bg-white p-6 rounded-xl border border-slate-200">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-slate-800">Performance Metrics</h3>
+                            <button class="text-sm text-primary hover:text-indigo-700 font-medium">View Details</button>
+                        </div>
+                        <!-- @FUNCTIONALITY: This chart should display performance data using Chart.js or similar library -->
+                        <div class="h-64 bg-slate-50 rounded-lg flex items-center justify-center">
+                            <div class="text-center text-slate-500">
+                                <i class="fas fa-chart-area text-4xl mb-2"></i>
+                                <p>Performance charts will render here</p>
+                                <p class="text-sm">Real-time metrics and KPI tracking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Projects & Team Activity -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Recent Projects -->
+                    <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200">
+                        <div class="p-6 border-b border-slate-200">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg font-semibold text-slate-800">Recent Projects</h3>
+                                <button class="text-sm text-primary hover:text-indigo-700 font-medium">View All</button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <!-- @MAP: projects.map(project => ( -->
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-palette text-white"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-slate-800" data-bind="project.name">Brand Identity Redesign</h4>
+                                        <p class="text-sm text-slate-500" data-bind="project.client">Acme Corporation</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success">Active</span>
+                                        <p class="text-sm text-slate-500 mt-1" data-bind="project.dueDate">Due in 5 days</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-mobile-alt text-white"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-slate-800" data-bind="project.name">Mobile App UI/UX</h4>
+                                        <p class="text-sm text-slate-500" data-bind="project.client">TechStart Inc.</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-warning/10 text-warning">Review</span>
+                                        <p class="text-sm text-slate-500 mt-1" data-bind="project.dueDate">Due in 12 days</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-globe text-white"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-medium text-slate-800" data-bind="project.name">Website Overhaul</h4>
+                                        <p class="text-sm text-slate-500" data-bind="project.client">Local Restaurant</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Completed</span>
+                                        <p class="text-sm text-slate-500 mt-1" data-bind="project.completedDate">Completed 2 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+
+                    <!-- Team Activity -->
+                    <div class="bg-white rounded-xl border border-slate-200">
+                        <div class="p-6 border-b border-slate-200">
+                            <h3 class="text-lg font-semibold text-slate-800">Team Activity</h3>
+                        </div>
+                        <div class="p-6">
+                            <!-- @MAP: activities.map(activity => ( -->
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <!-- Creative team member working on design -->
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" alt="Team member" class="w-8 h-8 rounded-full object-cover">
+                                    <div class="flex-1">
+                                        <p class="text-sm text-slate-800">
+                                            <span class="font-medium" data-bind="activity.user">Alex Rivera</span> 
+                                            uploaded new mockups to 
+                                            <span class="font-medium text-primary" data-bind="activity.project">Brand Identity</span>
+                                        </p>
+                                        <p class="text-xs text-slate-500" data-bind="activity.time">2 hours ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <!-- Designer reviewing client feedback -->
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" alt="Team member" class="w-8 h-8 rounded-full object-cover">
+                                    <div class="flex-1">
+                                        <p class="text-sm text-slate-800">
+                                            <span class="font-medium" data-bind="activity.user">Sarah Chen</span> 
+                                            commented on 
+                                            <span class="font-medium text-primary" data-bind="activity.project">Mobile App UI</span>
+                                        </p>
+                                        <p class="text-xs text-slate-500" data-bind="activity.time">4 hours ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <!-- Project manager coordinating team -->
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" alt="Team member" class="w-8 h-8 rounded-full object-cover">
+                                    <div class="flex-1">
+                                        <p class="text-sm text-slate-800">
+                                            <span class="font-medium" data-bind="activity.user">Mike Johnson</span> 
+                                            marked 
+                                            <span class="font-medium text-primary" data-bind="activity.project">Website Overhaul</span> 
+                                            as completed
+                                        </p>
+                                        <p class="text-xs text-slate-500" data-bind="activity.time">1 day ago</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-3">
+                                    <!-- Client communication activity -->
+                                    <img src="https://pixabay.com/get/g6e673018afd9878bed1be4bddfc724ea7a9ffc77f0bd777a2acb50d9ef1df38dc043a7d4908997c628867f3c4fcb488749497cc38f47bb5553a1a1842ad59264_1280.jpg" alt="Team member" class="w-8 h-8 rounded-full object-cover">
+                                    <div class="flex-1">
+                                        <p class="text-sm text-slate-800">
+                                            <span class="font-medium" data-bind="activity.user">Jessica Wong</span> 
+                                            shared project update with client
+                                        </p>
+                                        <p class="text-xs text-slate-500" data-bind="activity.time">2 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- @END_COMPONENT: DashboardContent -->
+        </main>
+        <!-- @END_COMPONENT: MainContent -->
+
+        <!-- @COMPONENT: TeamCommunicationPanel -->
+        <aside class="w-80 bg-white border-l border-slate-200 flex flex-col hidden xl:flex">
+            <div class="p-6 border-b border-slate-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-semibold text-slate-800">Team Chat</h3>
+                    <button class="text-slate-400 hover:text-slate-600">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="flex-1 overflow-y-auto p-4 space-y-4">
+                <!-- @MAP: messages.map(message => ( -->
+                <div class="flex items-start space-x-3">
+                    <!-- Team member discussing project details -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" alt="Team member" class="w-8 h-8 rounded-full object-cover">
+                    <div class="flex-1">
+                        <div class="bg-slate-100 rounded-lg p-3">
+                            <p class="text-sm font-medium text-slate-800" data-bind="message.user">Alex Rivera</p>
+                            <p class="text-sm text-slate-600 mt-1" data-bind="message.text">Hey team, I've uploaded the latest mockups for the brand identity project. Would love to get your feedback!</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1" data-bind="message.time">10:30 AM</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3 flex-row-reverse">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-medium">You</span>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-primary rounded-lg p-3">
+                            <p class="text-sm text-white" data-bind="message.text">Looking great! I especially like the color palette choices. Can we schedule a review session for tomorrow?</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1 text-right" data-bind="message.time">10:35 AM</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-3">
+                    <!-- Designer providing creative input -->
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150" alt="Team member" class="w-8 h-8 rounded-full object-cover">
+                    <div class="flex-1">
+                        <div class="bg-slate-100 rounded-lg p-3">
+                            <p class="text-sm font-medium text-slate-800" data-bind="message.user">Sarah Chen</p>
+                            <p class="text-sm text-slate-600 mt-1" data-bind="message.text">Absolutely! I'm free at 2 PM. Should we include the client in the call?</p>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1" data-bind="message.time">10:42 AM</p>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+
+                <!-- Typing Indicator -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-slate-200 rounded-full animate-pulse"></div>
+                    <div class="bg-slate-100 rounded-lg p-3">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div>
+                            <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                            <div class="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="p-4 border-t border-slate-200">
+                <div class="flex items-center space-x-2">
+                    <input type="text" placeholder="Type a message..." class="flex-1 border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary" data-mock="true">
+                    <button class="bg-primary text-white p-2 rounded-lg hover:bg-indigo-700 transition-colors" data-event="click:sendMessage">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <!-- @END_COMPONENT: TeamCommunicationPanel -->
+    </div>
+    <!-- @END_COMPONENT: AppLayout -->
+
+    <!-- @COMPONENT: FileUploadModal -->
+    <!-- @STATE: isUploadModalOpen:boolean = false -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden" id="uploadModal">
+        <div class="bg-white rounded-xl max-w-md w-full p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-slate-800">Upload Data</h3>
+                <button class="text-slate-400 hover:text-slate-600" onclick="toggleUploadModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="border-2 border-dashed border-slate-300 rounded-lg p-8 text-center hover:border-primary transition-colors cursor-pointer">
+                <i class="fas fa-cloud-upload-alt text-4xl text-slate-400 mb-4"></i>
+                <p class="text-slate-600 mb-2">Drag and drop your files here</p>
+                <p class="text-sm text-slate-500">or click to browse</p>
+                <input type="file" class="hidden" multiple accept=".csv,.json,.xlsx" data-mock="true">
+            </div>
+            <div class="mt-6 flex space-x-3">
+                <button class="flex-1 bg-slate-100 text-slate-600 py-2 px-4 rounded-lg hover:bg-slate-200 transition-colors" onclick="toggleUploadModal()">Cancel</button>
+                <button class="flex-1 bg-primary text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors" data-event="click:uploadFiles">Upload</button>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: FileUploadModal -->
+
+    <script>
+        // TODO: Implement business logic, API calls, and state management
+        (function() {
+            // Simple modal toggle functionality for demo purposes
+            window.toggleUploadModal = function() {
+                const modal = document.getElementById('uploadModal');
+                modal.classList.toggle('hidden');
+            };
+
+            // Simulate real-time updates
+            function simulateRealtimeUpdates() {
+                // This would be replaced with WebSocket or SSE connections
+                console.log('Real-time updates would be handled here');
+            }
+
+            // Initialize app
+            function init() {
+                simulateRealtimeUpdates();
+                console.log('CreativeSync initialized');
+            }
+
+            // Start the app when DOM is loaded
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>

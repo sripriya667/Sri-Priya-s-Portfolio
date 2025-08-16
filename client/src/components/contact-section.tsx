@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Phone, MapPin, Send, Linkedin, Github, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send} from "lucide-react";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -73,27 +74,26 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "sripriya.dev@gmail.com",
+      value: "sripriyaofficial2004@gmail.com",
       color: "primary"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+91 9347645667",
       color: "secondary"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Hyderabad, India",
       color: "accent"
     }
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", color: "primary" },
-    { icon: Github, href: "#", color: "secondary" },
-    { icon: Twitter, href: "#", color: "accent" }
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/sripriya-tirukoveluri/", color: "primary" },
+    { icon: FaGithub, href: "https://github.com/sripriya667", color: "secondary" },
   ];
 
   return (
@@ -158,8 +158,11 @@ export default function ContactSection() {
               <h4 className="font-semibold text-gray-900 mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
-                  <motion.button
+                  <motion.a
                     key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
@@ -171,7 +174,7 @@ export default function ContactSection() {
                     }`}
                   >
                     <social.icon size={18} />
-                  </motion.button>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>
